@@ -1,9 +1,7 @@
 import { CardMedia, Grid } from '@mui/material';
 import React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 const Service = (props) => {
@@ -21,7 +19,7 @@ const Service = (props) => {
                     <Typography variant="h5" component="div">
                         {name}
                     </Typography>
-                    <Typography color="text.secondary" variant="body2">
+                    <Typography sx={{ mt: 2 }} color="text.secondary" variant="body2">
                         {description}
                     </Typography>
                 </CardContent>

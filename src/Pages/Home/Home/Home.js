@@ -1,7 +1,10 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import AppointmentBanner from '../AppointmentBanner/AppointmentBanner';
 import Banner from '../Banner/Banner';
+import ContactFormBanner from '../ContactFormBanner/ContactFormBanner';
+import DentalCareBanner from '../DentalCareBanner/DentalCareBanner';
 import Services from '../Services/Services';
 
 const Home = () => {
@@ -10,7 +13,10 @@ const Home = () => {
             <Navigation />
             <Banner></Banner>
             <Services></Services>
+            <DentalCareBanner />
             <AppointmentBanner></AppointmentBanner>
+            <ContactFormBanner></ContactFormBanner>
+            <Footer></Footer>
         </div>
     );
 };

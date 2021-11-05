@@ -1,40 +1,31 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import doctor from '../../../images/doctor.png'
-import bg from '../../../images/appointment-bg.png'
+import treatment from '../../../images/treatment.png'
 import { Button, Typography } from '@mui/material';
 
 const appointmentBg = {
-    background: `url(${bg})`,
     marginTop: 175,
-    backgroundColor: 'rgba(45, 58, 74,0.9)',
-    backgroundBlendMode: 'darken, luminosity',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover'
 }
-const AppointmentBanner = () => {
+const DentalCareBanner = () => {
     return (
-        <Box style={appointmentBg} sx={{ flexGrow: 1, py: 3 }}>
+        <Box style={appointmentBg} sx={{ flexGrow: 1, px: 5, justifyContent: 'center' }}>
             <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                    <img src={doctor}
-                        style={{ width: 400, marginTop: '-100px' }}
+                <Grid item xs={12} md={5}>
+                    <img src={treatment}
+                        style={{ maxWidth: '80%' }}
                         alt="" />
                 </Grid>
                 <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'flex-start', textAlign: 'left', alignItems: 'center' }}>
                     <Box>
-                        <Typography variant="h6" sx={{ mt: 5 }} style={{ color: '#5CE7ED' }}>
-                            Appointment
+                        <Typography variant="h4">
+                            Exceptional Dental Care, <br /> on Your Terms
                         </Typography>
-                        <Typography variant="h4" style={{ color: 'white' }}>
-                            Make an Appointment Today
-                        </Typography>
-                        <Typography variant="h6" sx={{ my: 5, pr: 3 }} style={{ color: 'white', fontSize: 14 }}>
+                        <Typography variant="h6" sx={{ my: 5, pr: 5 }} style={{ color: 'gray', fontSize: 14 }}>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio asperiores eveniet similique id quasi, modi quia quos tempora, expedita, quod ipsam libero dignissimos cum perferendis fugit exercitationem. Aliquam cumque porro itaque facere labore consequatur temporibus facilis possimus excepturi, explicabo accusantium quod aperiam nulla tempore nesciunt expedita minus quo corporis officiis.
                         </Typography>
                         <Button variant="contained" style={{ backgroundColor: '#289ca1' }}>
-                            Get Appointment
+                            Learn More
                         </Button>
                     </Box>
                 </Grid>
@@ -43,4 +34,4 @@ const AppointmentBanner = () => {
     );
 };
 
-export default AppointmentBanner;
+export default DentalCareBanner;

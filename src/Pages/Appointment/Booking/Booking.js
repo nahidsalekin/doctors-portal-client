@@ -1,6 +1,6 @@
 import { Button, Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
-import BookingModal from '../BookingModal.js/BookingModal';
+import BookingModal from '../BookingModal/BookingModal';
 
 const Booking = ({ booking, date }) => {
     const { name, time, space } = booking;

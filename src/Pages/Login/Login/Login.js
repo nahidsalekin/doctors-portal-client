@@ -2,10 +2,10 @@ import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography
 import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-
+import GoogleIcon from '@mui/icons-material/Google';
 import login from '../../../images/login.png'
 const Login = () => {
-    const { user, loginUser, isLoading, authError } = useAuth();
+    const { user, loginUser, googleSignIn, isLoading, authError } = useAuth();
     const [loginData, setLoginData] = useState({});
     const handleOnChange = e => {
         const field = e.target.name;
@@ -61,6 +61,10 @@ const Login = () => {
                         {authError && <Alert severity="error">{authError}!</Alert>
                         }
                     </form>
+                    <p>--------------------------------------------</p>
+                    <Button onClick={() => googleSignIn(location, history)} variant="contained">
+                        <GoogleIcon></GoogleIcon>
+                    </Button>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <img src={login} style={{ maxWidth: '100%' }} alt="" />

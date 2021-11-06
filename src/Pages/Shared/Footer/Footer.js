@@ -15,7 +15,7 @@ const Footer = () => {
     return (
         <Box sx={{ p: 5 }}>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={3}>
+                <Grid item xs={12} md={3}>
                     <Typography variant="h6" sx={{ mb: 3 }} style={{ color: '#5CE7ED' }}>
                         ...
                     </Typography>
@@ -25,7 +25,7 @@ const Footer = () => {
                     <Link style={linkItem} to="/">Emmergency Dental Care</Link>
                     <Link style={linkItem} to="/">Emmergency Dental Care</Link>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={12} md={3}>
                     <Typography variant="h6" sx={{ mb: 3 }} style={{ color: '#5CE7ED' }}>
                         Services
                     </Typography>
@@ -35,7 +35,7 @@ const Footer = () => {
                     <Link style={linkItem} to="/">Emmergency Dental Care</Link>
                     <Link style={linkItem} to="/">Emmergency Dental Care</Link>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={12} md={3}>
                     <Typography variant="h6" sx={{ mb: 3 }} style={{ color: '#5CE7ED' }}>
                         Our Health
                     </Typography>
@@ -45,7 +45,7 @@ const Footer = () => {
                     <Link style={linkItem} to="/">Emmergency Dental Care</Link>
                     <Link style={linkItem} to="/">Emmergency Dental Care</Link>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={12} md={3}>
                     <Typography variant="h6" sx={{ mb: 3 }} style={{ color: '#5CE7ED' }}>
                         Our Address
                     </Typography>

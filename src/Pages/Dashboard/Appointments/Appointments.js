@@ -24,7 +24,7 @@ const Appointments = ({ date }) => {
     const [appointments, setAppointments] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/appointments?email=${user.email}&date=${date}`)
+        fetch(`https://nameless-castle-61219.herokuapp.com/appointments?email=${user.email}&date=${date}`)
             .then(res => res.json())
             .then(data => setAppointments(data))
     }, [date])

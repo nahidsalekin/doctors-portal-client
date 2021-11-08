@@ -39,7 +39,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBooki
             serviceName: name,
             date: (new Date(date)).toLocaleDateString()
         }
-        fetch('http://localhost:5000/appointments', {
+        fetch('https://nameless-castle-61219.herokuapp.com/appointments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -15,7 +15,7 @@ const appointmentBg = {
 }
 const AppointmentBanner = () => {
     return (
-        <Box style={appointmentBg} sx={{ flexGrow: 1, py: 3 }}>
+        <Box style={appointmentBg} sx={{ flexGrow: 1, p: 3 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <img src={doctor}

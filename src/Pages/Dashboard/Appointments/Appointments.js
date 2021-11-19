@@ -7,6 +7,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
+import { textAlign } from '@mui/system';
 
 function createData(name, calories, fat, carbs, protein) {
     return { name, calories, fat, carbs, protein };
@@ -37,22 +40,24 @@ const Appointments = ({ date }) => {
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>
-                            <TableCell align="right">Time</TableCell>
-                            <TableCell align="right">Action</TableCell>
+                            <TableCell align="center">Time</TableCell>
+                            <TableCell align="center">Action</TableCell>
 
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {appointments.map((row) => (
-                            <TableRow
-                                key={row._id}
-                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                            >
+                            <TableRow key={row._id}>
                                 <TableCell component="th" scope="row">
                                     {row.patientName}
                                 </TableCell>
-                                <TableCell align="right">{row.time}</TableCell>
-                                <TableCell align="right">{row.fat}</TableCell>
+                                <TableCell align="center">{row.time}</TableCell>
+                                <TableCell align="center">
+                                    {row.payment ? 'Paid' :
+                                        <Link to={`/dashboard/payment/${row._id}`}>
+                                            <Button variant="contained">Pay</Button>
+                                        </Link>
+                                    }</TableCell>
 
                             </TableRow>
                         ))}

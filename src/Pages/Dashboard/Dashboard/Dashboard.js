@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -6,18 +7,18 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+import HomeIcon from '@mui/icons-material/Home';
+import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+import BookIcon from '@mui/icons-material/Book';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Button } from '@mui/material';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     useRouteMatch
@@ -28,6 +29,7 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddDoctor from '../AddDoctor/AddDoctor';
 import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import Payment from '../Payment/Payment';
 const drawerWidth = 200;
 
 function Dashboard(props) {
@@ -44,23 +46,42 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <Link to="/appointment"><Button color="inherit">Appointment</Button></Link>
-            <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
-
-            {admin && <Box>
-
-                <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
-                <Link to={`${url}/addDoctor`}><Button color="inherit">Add Doctor</Button></Link></Box>}
 
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
+                <Link to={`${url}`}>
+                    <ListItem button>
                         <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                            <HomeIcon />
                         </ListItemIcon>
-                        <ListItemText primary={text} />
+                        <ListItemText primary="Dashboard" />
                     </ListItem>
-                ))}
+                </Link>
+                <Link to="/appointment">
+                    <ListItem button>
+                        <ListItemIcon>
+                            <BookIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Appointment" />
+                    </ListItem>
+                </Link>
+
+                {admin && <Box>
+                    <Link to={`${url}/makeAdmin`}>
+                        <ListItem button>
+                            <ListItemIcon>
+                                <SupervisorAccountIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Make Admin" />
+                        </ListItem>
+                    </Link>
+                    <Link to={`${url}/addDoctor`}>
+                        <ListItem button>
+                            <ListItemIcon>
+                                <LocalHospitalIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Add Doctor" />
+                        </ListItem>
+                    </Link></Box>}
             </List>
 
         </div>
@@ -134,6 +155,9 @@ function Dashboard(props) {
                 <Switch>
                     <Route exact path={path}>
                         <DashboardHome></DashboardHome>
+                    </Route>
+                    <Route path={`${path}/payment/:appointmentId`}>
+                        <Payment></Payment>
                     </Route>
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
